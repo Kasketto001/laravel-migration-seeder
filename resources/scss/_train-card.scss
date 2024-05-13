@@ -1,0 +1,52 @@
+// resources/sass/components/_card.scss
+
+.card {
+    
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        background: linear-gradient(135deg, #b99329, #faf86d);
+        color: #fff;
+    .circle {
+        background-color: #44341175;
+        width: 100px;
+        height: 100px;
+        border-radius: 100px;
+    }
+    .fa-train {
+        font-size: 50px;
+        color:#ffd987;
+    }
+    &:hover {
+        
+        background: linear-gradient(135deg, #82611b, #f7a84e);
+    }
+
+    &-body {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 0 0 15px 15px;
+
+        & .card-title {
+            color: #333;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        & .card-text {
+            color: #555;
+        }
+
+        & .text-success {
+            color: #28a745;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        & .text-danger {
+            color: #dc3545;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+    }
+}

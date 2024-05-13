@@ -1,1 +1,11 @@
-@import '~bootstrap/scss/bootstrap';
+@use '~bootstrap/scss/bootstrap';
+@use './train-card';
+
+a {
+    text-decoration: none;
+}
+h1 {
+    text-transform: uppercase;
+    font-weight: 800;
+    color: rgb(70, 34, 0);
+}

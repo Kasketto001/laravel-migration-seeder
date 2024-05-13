@@ -16,6 +16,11 @@ class TrainController extends Controller
         // dd(Train::all());
         $trains = Train::orderByDesc('id')->get();
         return view('guests.trains.index', compact('trains'));
+
+
+
+
+
     }
 
     /**
@@ -39,7 +44,7 @@ class TrainController extends Controller
      */
     public function show(Train $train)
     {
-        dd($train);
+        return view('guests.trains.show', compact('train'));
     }
 
     /**

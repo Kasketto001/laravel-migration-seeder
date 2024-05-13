@@ -8,21 +8,24 @@
             @forelse($trains as $train)
                 <div class="col">
                     <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">{{$train->departure_station}} -> {{$train->arrival_station}}</h5>
-                            <p class="card-text">Departure Time: {{$train->departure_time}}</p>
-                            <p class="card-text">Arrival Time: {{$train->arrival_time}}</p>
-                            <p class="card-text">Train Code: {{$train->train_code}}</p>
-                            <p class="card-text">Carriages: {{$train->carriages_number}}</p>
-                            @if($train->on_schedule)
-                                <p class="card-text text-success">On Schedule</p>
-                            @else
-                                <p class="card-text text-danger">Delayed</p>
-                            @endif
-                            @if($train->cancelled)
-                                <p class="card-text text-danger">Cancelled</p>
-                            @endif
-                        </div>
+                        <a href="{{route('guests.trains.show', $train)}}">
+                            <div class="card-body d-flex gap-3 row">
+                                <div class="mx-2 circle d-flex justify-content-center align-items-center"><i class="fa-solid fa-train"></i></div>
+                                <div class="data d-flex flex-column">
+                                <h5 class="card-title">{{$train->departure_station}} <i class="fa-solid fa-arrow-right-long"></i> {{$train->arrival_station}}</h5>
+                                <p class="card-text">Departure Time: {{$train->departure_time}}</p>
+                                <p class="card-text">Arrival Time: {{$train->arrival_time}}</p>
+                                @if($train->on_schedule)
+                                    <p class="card-text text-success">On Schedule</p>
+                                @else
+                                    <p class="card-text text-danger">Delayed</p>
+                                @endif
+                                @if($train->cancelled)
+                                    <p class="card-text text-danger">Cancelled</p>
+                                @endif
+                            </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             @empty
